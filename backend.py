@@ -1,5 +1,6 @@
 from datetime import date as dt
-from transformers import AutoTokenizer, AutoModelForSequenceClassification, Trainer
+from typing import Text
+from transformers import AutoTokenizer, Trainer, TFAutoModelForSequenceClassification
 import os
 import tweepy
 import boto3
@@ -37,7 +38,7 @@ class Roberta:
     def prepare_models(self):
         model_name = "siebert/sentiment-roberta-large-english"
         tokenizer = AutoTokenizer.from_pretrained(model_name)
-        model = AutoModelForSequenceClassification.from_pretrained(model_name)
+        model = TFAutoModelForSequenceClassification.from_pretrained(model_name)
         trainer = Trainer(model=model)
         
         return tokenizer, trainer
