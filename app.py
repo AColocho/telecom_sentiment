@@ -8,7 +8,7 @@ def get_data():
     for day in range(0,7):
         data_date = str(date.today() - timedelta(day))
         dynamodb = boto3.resource('dynamodb')
-        table = dynamodb.Table('telecom_twitter_sentiment')
+        table = dynamodb.Table(st.secrets['AWS_TABLE'])
         response = table.get_item(Key={'data':data_date})
         try:
             text_item = response['Item']['text_item']
