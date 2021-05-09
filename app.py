@@ -62,9 +62,12 @@ for row in ax:
 '''
 # Telecommunication Company Tweet Sentiment
 
-100 tweets are extracted from the twitter API daily and processed through machine learning to detect sentiment.
+At most 100 tweets* related to each company are extracted from twitter daily, and they are ran through a machine learning model to detect sentiment.
+The measure shown in the charts below are the percentage of positive tweets from all the tweets extracted.
 The model used to identitdy sentiment is sentiment-roberta-large-english. More info about the model can be found in this paper [More than a feeling: Benchmarks for sentiment analysis accuracy](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3489963).
 The source code to this app can be found [here](https://github.com/AColocho/telecom_sentiment)
+
+* Sometimes less than 100 tweets are availible for extraction due to unkown reasons related to the twitter API.
 '''
 
 st.pyplot(fig)
