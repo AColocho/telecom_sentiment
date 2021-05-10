@@ -51,7 +51,7 @@ for row in ax:
         else:
             x = []
             for value in range(0,len(data)):
-                x.append(date.today() - timedelta(value))
+                x.append(str(date.today() - timedelta(value)))
                 
         col.bar(x,data)
         col.set_ylabel('Positive Tweet Percentage')
