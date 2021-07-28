@@ -42,6 +42,7 @@ titles = ['Daily Comparison', 'Comcast', 'Fios', 'Cox']
 fig, ax = plt.subplots(nrows=2, ncols=2, figsize=(10,10))
 fig.subplots_adjust(hspace=.3, wspace=.5)
 i = 0
+y_scale = [round(i,2) for i in np.linspace(0,1,10)]
 for row in ax:
     for col in row:
         title = titles[i]
@@ -55,7 +56,7 @@ for row in ax:
                 x.append(str(date.today() - timedelta(value)))
                 
         col.bar(x,data)
-        col.set_yticks(np.linspace(0,1,10))
+        col.set_yticks(y_scale)
         col.set_ylabel('Positive Tweet Percentage')
         col.title.set_text(title)
         col.tick_params(axis='x', labelrotation=45)
