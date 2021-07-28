@@ -54,7 +54,7 @@ for row in ax:
                 x.append(str(date.today() - timedelta(value)))
                 
         col.bar(x,data)
-        col.set_yticks(0,1)
+        col.set_yticks(range(1))
         col.set_ylabel('Positive Tweet Percentage')
         col.title.set_text(title)
         col.tick_params(axis='x', labelrotation=45)
