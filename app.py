@@ -42,7 +42,7 @@ titles = ['Daily Comparison', 'Comcast', 'Fios', 'Cox']
 fig, ax = plt.subplots(nrows=2, ncols=2, figsize=(10,10))
 fig.subplots_adjust(hspace=.3, wspace=.5)
 i = 0
-y_scale = [round(i,1) for i in np.linspace(0,1,10)]
+y_scale = [round(i,1) for i in np.linspace(0,1,11)]
 for row in ax:
     for col in row:
         title = titles[i]
