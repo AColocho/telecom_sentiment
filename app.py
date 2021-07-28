@@ -2,6 +2,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import boto3
 from datetime import date, timedelta
+import numpy as np
 
 def get_data():
     data = []
@@ -54,7 +55,7 @@ for row in ax:
                 x.append(str(date.today() - timedelta(value)))
                 
         col.bar(x,data)
-        col.set_yticks(range(1))
+        col.set_yticks(np.linspace(0,1,10))
         col.set_ylabel('Positive Tweet Percentage')
         col.title.set_text(title)
         col.tick_params(axis='x', labelrotation=45)
